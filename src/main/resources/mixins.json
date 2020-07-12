@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.PercyDan.RandomTitle.Mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [],
+  "client": ["MixinMinecraft"],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

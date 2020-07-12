@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "randomtitle",
+  "version": "1.5",
+
+  "name": "RandomTitle",
+  "description": "Pick random sentences to be window title",
+  "authors": [
+    "PercyDan"
+  ],
+  "contact": {
+    "homepage": "https://gitee.com/percydan/RandomTitle",
+    "sources": "https://gitee.com/percydan/RandomTitle"
+  },
+  "environment": "client",
+  "mixins": [
+    "mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "minecraft": ">=1.15"
+  }
+}
