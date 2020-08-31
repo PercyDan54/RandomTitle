@@ -15,9 +15,9 @@
  */
 package org.yaml.snakeyaml.emitter;
 
-import java.io.IOException;
-
 import org.yaml.snakeyaml.events.Event;
+
+import java.io.IOException;
 
 public interface Emitable {
     void emit(Event event) throws IOException;

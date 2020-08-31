@@ -15,17 +15,13 @@
  */
 package org.yaml.snakeyaml.nodes;
 
+import org.yaml.snakeyaml.error.YAMLException;
+import org.yaml.snakeyaml.util.UriEncoder;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.net.URI;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
-import org.yaml.snakeyaml.error.YAMLException;
-import org.yaml.snakeyaml.util.UriEncoder;
+import java.util.*;
 
 public final class Tag {
     public static final String PREFIX = "tag:yaml.org,2002:";

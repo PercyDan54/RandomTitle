@@ -15,14 +15,14 @@
  */
 package org.yaml.snakeyaml.resolver;
 
+import org.yaml.snakeyaml.nodes.NodeId;
+import org.yaml.snakeyaml.nodes.Tag;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
-
-import org.yaml.snakeyaml.nodes.NodeId;
-import org.yaml.snakeyaml.nodes.Tag;
 
 /**
  * Resolver tries to detect a type by content (when the tag is implicit)

@@ -15,6 +15,9 @@
  */
 package org.yaml.snakeyaml.introspector;
 
+import org.yaml.snakeyaml.error.YAMLException;
+import org.yaml.snakeyaml.util.PlatformFeatureDetector;
+
 import java.beans.FeatureDescriptor;
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
@@ -22,15 +25,7 @@ import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
-
-import org.yaml.snakeyaml.error.YAMLException;
-import org.yaml.snakeyaml.util.PlatformFeatureDetector;
+import java.util.*;
 
 public class PropertyUtils {
 

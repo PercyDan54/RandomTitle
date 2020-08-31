@@ -15,6 +15,8 @@
  */
 package org.yaml.snakeyaml.introspector;
 
+import org.yaml.snakeyaml.error.YAMLException;
+
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
@@ -27,8 +29,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import org.yaml.snakeyaml.error.YAMLException;
 
 // TODO: decide priorities for get/set Read/Field/Delegate Write/Field/Delegate - is FIELD on the correct place ?
 public class PropertySubstitute extends Property {

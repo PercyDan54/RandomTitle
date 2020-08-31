@@ -15,37 +15,15 @@
  */
 package org.yaml.snakeyaml.serializer;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.DumperOptions.Version;
 import org.yaml.snakeyaml.emitter.Emitable;
-import org.yaml.snakeyaml.events.AliasEvent;
-import org.yaml.snakeyaml.events.DocumentEndEvent;
-import org.yaml.snakeyaml.events.DocumentStartEvent;
-import org.yaml.snakeyaml.events.ImplicitTuple;
-import org.yaml.snakeyaml.events.MappingEndEvent;
-import org.yaml.snakeyaml.events.MappingStartEvent;
-import org.yaml.snakeyaml.events.ScalarEvent;
-import org.yaml.snakeyaml.events.SequenceEndEvent;
-import org.yaml.snakeyaml.events.SequenceStartEvent;
-import org.yaml.snakeyaml.events.StreamEndEvent;
-import org.yaml.snakeyaml.events.StreamStartEvent;
-import org.yaml.snakeyaml.nodes.AnchorNode;
-import org.yaml.snakeyaml.nodes.CollectionNode;
-import org.yaml.snakeyaml.nodes.MappingNode;
-import org.yaml.snakeyaml.nodes.Node;
-import org.yaml.snakeyaml.nodes.NodeId;
-import org.yaml.snakeyaml.nodes.NodeTuple;
-import org.yaml.snakeyaml.nodes.ScalarNode;
-import org.yaml.snakeyaml.nodes.SequenceNode;
-import org.yaml.snakeyaml.nodes.Tag;
+import org.yaml.snakeyaml.events.*;
+import org.yaml.snakeyaml.nodes.*;
 import org.yaml.snakeyaml.resolver.Resolver;
+
+import java.io.IOException;
+import java.util.*;
 
 public final class Serializer {
     private final Emitable emitter;

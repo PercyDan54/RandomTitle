@@ -15,10 +15,10 @@
  */
 package org.yaml.snakeyaml.events;
 
-import java.util.Map;
-
 import org.yaml.snakeyaml.DumperOptions.Version;
 import org.yaml.snakeyaml.error.Mark;
+
+import java.util.Map;
 
 /**
  * Marks the beginning of a document.

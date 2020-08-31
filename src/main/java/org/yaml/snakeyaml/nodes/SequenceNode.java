@@ -15,10 +15,10 @@
  */
 package org.yaml.snakeyaml.nodes;
 
-import java.util.List;
-
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.error.Mark;
+
+import java.util.List;
 
 /**
  * Represents a sequence.

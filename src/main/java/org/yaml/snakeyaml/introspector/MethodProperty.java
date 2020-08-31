@@ -15,14 +15,14 @@
  */
 package org.yaml.snakeyaml.introspector;
 
-import java.beans.PropertyDescriptor;
-import java.lang.annotation.Annotation;
-import java.util.List;
-import java.lang.reflect.Method;
-import java.lang.reflect.Type;
-
 import org.yaml.snakeyaml.error.YAMLException;
 import org.yaml.snakeyaml.util.ArrayUtils;
+
+import java.beans.PropertyDescriptor;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
+import java.lang.reflect.Type;
+import java.util.List;
 
 /**
  * <p>

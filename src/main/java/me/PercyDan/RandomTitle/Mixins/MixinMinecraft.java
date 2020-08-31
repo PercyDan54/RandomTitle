@@ -19,6 +19,8 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 
 
@@ -43,11 +45,11 @@ public abstract class MixinMinecraft {
 	@Shadow
 	private ServerInfo currentServerEntry;
 	public String Randtitle= RandomTitleUtil.getTitle();
+
 	@Inject(method = "getWindowTitle", at = @At("HEAD"),cancellable = true)
 	private void inject_getWindowTitle(CallbackInfoReturnable<String> ci) {
 		final Logger LOGGER = LogManager.getLogger("RandomTitle");
 		String title = RandomTitleUtil.getFormat();
-		String prefix = RandomTitleUtil.getPrefix();
 		StringBuilder stringBuilder = new StringBuilder(SharedConstants.getGameVersion().getName());
 		stringBuilder.append(" ");
 		ClientPlayNetworkHandler clientPlayNetworkHandler = this.getNetworkHandler();
@@ -65,9 +67,8 @@ public abstract class MixinMinecraft {
 
 		}
 		String date = new SimpleDateFormat(RandomTitleUtil.getDateFormat()).format((System.currentTimeMillis()));
-		prefix = prefix.replace("%version%", stringBuilder.toString());
 		title=title.replace("%date%", date);
-		title=title.replace("%prefix%",prefix);
+		title=title.replace("%prefix%",RandomTitleUtil.getPrefix().replace("%version%", stringBuilder.toString()));
 		title=title.replace("%title%", Randtitle);
 		LOGGER.info("Title set to \"" + title + "\"");
 		ci.setReturnValue(title);

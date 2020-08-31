@@ -15,14 +15,14 @@
  */
 package org.yaml.snakeyaml.reader;
 
+import org.yaml.snakeyaml.error.Mark;
+import org.yaml.snakeyaml.error.YAMLException;
+import org.yaml.snakeyaml.scanner.Constant;
+
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
 import java.util.Arrays;
-
-import org.yaml.snakeyaml.error.Mark;
-import org.yaml.snakeyaml.error.YAMLException;
-import org.yaml.snakeyaml.scanner.Constant;
 
 /**
  * Reader: checks if code points are in allowed range. Returns '\0' when end of

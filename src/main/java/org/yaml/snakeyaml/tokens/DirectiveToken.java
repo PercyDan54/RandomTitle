@@ -15,10 +15,10 @@
  */
 package org.yaml.snakeyaml.tokens;
 
-import java.util.List;
-
 import org.yaml.snakeyaml.error.Mark;
 import org.yaml.snakeyaml.error.YAMLException;
+
+import java.util.List;
 
 public final class DirectiveToken<T> extends Token {
     private final String name;

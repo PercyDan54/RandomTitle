@@ -15,39 +15,20 @@
  */
 package org.yaml.snakeyaml.emitter;
 
-import java.io.IOException;
-import java.io.Writer;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Queue;
-import java.util.Set;
-import java.util.TreeSet;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.regex.Pattern;
-
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.DumperOptions.Version;
 import org.yaml.snakeyaml.error.YAMLException;
-import org.yaml.snakeyaml.events.AliasEvent;
-import org.yaml.snakeyaml.events.CollectionEndEvent;
-import org.yaml.snakeyaml.events.CollectionStartEvent;
-import org.yaml.snakeyaml.events.DocumentEndEvent;
-import org.yaml.snakeyaml.events.DocumentStartEvent;
-import org.yaml.snakeyaml.events.Event;
-import org.yaml.snakeyaml.events.MappingEndEvent;
-import org.yaml.snakeyaml.events.MappingStartEvent;
-import org.yaml.snakeyaml.events.NodeEvent;
-import org.yaml.snakeyaml.events.ScalarEvent;
-import org.yaml.snakeyaml.events.SequenceEndEvent;
-import org.yaml.snakeyaml.events.SequenceStartEvent;
-import org.yaml.snakeyaml.events.StreamEndEvent;
-import org.yaml.snakeyaml.events.StreamStartEvent;
+import org.yaml.snakeyaml.events.*;
 import org.yaml.snakeyaml.nodes.Tag;
 import org.yaml.snakeyaml.reader.StreamReader;
 import org.yaml.snakeyaml.scanner.Constant;
 import org.yaml.snakeyaml.util.ArrayStack;
+
+import java.io.IOException;
+import java.io.Writer;
+import java.util.*;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.regex.Pattern;
 
 /**
  * <pre>

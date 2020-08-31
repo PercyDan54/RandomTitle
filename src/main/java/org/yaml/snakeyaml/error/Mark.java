@@ -15,9 +15,9 @@
  */
 package org.yaml.snakeyaml.error;
 
-import java.io.Serializable;
-
 import org.yaml.snakeyaml.scanner.Constant;
+
+import java.io.Serializable;
 
 /**
  * It's just a record and its only use is producing nice error messages. Parser

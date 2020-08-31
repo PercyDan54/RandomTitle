@@ -15,28 +15,17 @@
  */
 package org.yaml.snakeyaml.representer;
 
-import java.io.UnsupportedEncodingException;
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TimeZone;
-import java.util.UUID;
-import java.util.regex.Pattern;
-
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.error.YAMLException;
 import org.yaml.snakeyaml.external.biz.base64Coder.Base64Coder;
 import org.yaml.snakeyaml.nodes.Node;
 import org.yaml.snakeyaml.nodes.Tag;
 import org.yaml.snakeyaml.reader.StreamReader;
+
+import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
+import java.util.*;
+import java.util.regex.Pattern;
 
 /**
  * Represent standard Java classes

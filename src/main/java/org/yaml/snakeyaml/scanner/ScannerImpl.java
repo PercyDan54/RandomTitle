@@ -15,44 +15,18 @@
  */
 package org.yaml.snakeyaml.scanner;
 
-import java.nio.ByteBuffer;
-import java.nio.charset.CharacterCodingException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.regex.Pattern;
-
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.error.Mark;
 import org.yaml.snakeyaml.error.YAMLException;
 import org.yaml.snakeyaml.reader.StreamReader;
-import org.yaml.snakeyaml.tokens.AliasToken;
-import org.yaml.snakeyaml.tokens.AnchorToken;
-import org.yaml.snakeyaml.tokens.BlockEndToken;
-import org.yaml.snakeyaml.tokens.BlockEntryToken;
-import org.yaml.snakeyaml.tokens.BlockMappingStartToken;
-import org.yaml.snakeyaml.tokens.BlockSequenceStartToken;
-import org.yaml.snakeyaml.tokens.DirectiveToken;
-import org.yaml.snakeyaml.tokens.DocumentEndToken;
-import org.yaml.snakeyaml.tokens.DocumentStartToken;
-import org.yaml.snakeyaml.tokens.FlowEntryToken;
-import org.yaml.snakeyaml.tokens.FlowMappingEndToken;
-import org.yaml.snakeyaml.tokens.FlowMappingStartToken;
-import org.yaml.snakeyaml.tokens.FlowSequenceEndToken;
-import org.yaml.snakeyaml.tokens.FlowSequenceStartToken;
-import org.yaml.snakeyaml.tokens.KeyToken;
-import org.yaml.snakeyaml.tokens.ScalarToken;
-import org.yaml.snakeyaml.tokens.StreamEndToken;
-import org.yaml.snakeyaml.tokens.StreamStartToken;
-import org.yaml.snakeyaml.tokens.TagToken;
-import org.yaml.snakeyaml.tokens.TagTuple;
-import org.yaml.snakeyaml.tokens.Token;
-import org.yaml.snakeyaml.tokens.ValueToken;
+import org.yaml.snakeyaml.tokens.*;
 import org.yaml.snakeyaml.util.ArrayStack;
 import org.yaml.snakeyaml.util.UriEncoder;
+
+import java.nio.ByteBuffer;
+import java.nio.charset.CharacterCodingException;
+import java.util.*;
+import java.util.regex.Pattern;
 
 /**
  * <pre>
