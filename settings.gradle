@@ -1,6 +1,5 @@
 pluginManagement {
     repositories {
-        jcenter()
         maven {
             name = 'Fabric'
             url = 'https://maven.fabricmc.net/'
@@ -12,13 +11,11 @@ pluginManagement {
     maven {
         // For fernflower
         name = 'sponge'
-        url = 'http://repo.spongepowered.org/maven'
+        url = 'https://repo.spongepowered.org/maven'
     }
-    maven {
-        // For modlauncher
-        name = 'forge'
-        url = 'https://files.minecraftforge.net/maven'
-    }
+	maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
         gradlePluginPortal()
+        jcenter()
     }
 }
