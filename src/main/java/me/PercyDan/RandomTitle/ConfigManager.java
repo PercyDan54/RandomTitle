@@ -22,14 +22,14 @@ public class ConfigManager {
 
     public ConfigManager() {
         if (!configFile.exists()) {
-            LOGGER.info("创建配置文件");
+            LOGGER.info("Config file not found, creating default");
             createDefault();
             config = new Yaml().load(this.getClass().getResourceAsStream("/title.yml"));
         }
         try {
             config = new Yaml().load(new FileInputStream(configFile));
         } catch (Exception e) {
-            LOGGER.error("加载配置文件失败！", e);
+            LOGGER.error("Failed to load config!", e);
         }
     }
 
@@ -46,7 +46,7 @@ public class ConfigManager {
                 outputStream.close();
             }
         } catch (Throwable e) {
-            LOGGER.error("创建配置文件失败！", e);
+            LOGGER.error("Failed to create default config!", e);
         }
     }
 
@@ -57,7 +57,7 @@ public class ConfigManager {
             List titles = (List) config.get("title");
             title = titles.get(new Random().nextInt(titles.size())).toString();
         } catch (Throwable e) {
-            LOGGER.error("获取标题失败！", e);
+            LOGGER.error("Failed to get title from config!", e);
         }
         return title;
     }
@@ -74,7 +74,7 @@ public class ConfigManager {
             String sentence = json.get("hitokoto").getAsString();
             title = sentence + "   ——" + from;
         } catch (Throwable e) {
-            LOGGER.error("获取标题失败！", e);
+            LOGGER.error("Failed to get title from API!", e);
             return getTitleFromList();
         }
         return title;

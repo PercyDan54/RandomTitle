@@ -1,13 +1,11 @@
 #模式 
-#0为从https://v1.hitokoto.cn获取
-#1为取title列表
-#2两者随机
+#0 = Fetch from https://v1.hitokoto.cn
+#1 = Pick from the list below
+#2 = Random of the two above
 mode: 0
 title:
-#标题列表，mode为0可缺省
   - "众生于我掌声，却未予我身份     ——《狐妖小红娘》"
   - "你给的美梦只剩下温柔     ——《镇魂街》"
-  - " -你分得清好坏吗？   -不必问我，你可以有你自己的想法  ——《罗小黑战记》"
   - "一旦得到爱，一旦付出爱，就再也无法忘怀了     ——《夏目友人帐》"
   - "他们想要的成熟我想不通，他们嘴里的软弱我听不懂     ——《镇魂街》"
   - "所有为你而行的空幻梦想，都不及最后与你许下的愿望     ——《狐妖小红娘》"
@@ -29,7 +27,6 @@ title:
   - "Are you there, or are you just a decoy dream in my head     ——Owl City《On the wing》"
   - "其实，雨并不公道，因为下落在一个没有公道的世界上    ——《骆驼祥子》"
   - "愿出一切曾经拥有，只为赌一回     ——《狐妖小红娘》"
-  - "If I'm really a winner , where do these demons come from?     ——《饥饿游戏》"
   - "花早晚会凋谢，记忆最终也会消散    ——《镇魂街》 "
   - "世事变幻无常，而近乎永恒不变者，唯你我头上的同一片星空     ——《万国志》"
   - "All this time I was finding myself, and I didn't know I was lost...     ——Avicii 《Wake Me Up》"
@@ -45,7 +42,7 @@ title:
   - "Before you go and walk away, you better know where you're going     ——Vicetone《Nevada》"
   - "胆小如鼠也要表白清楚     ——《狐妖小红娘》"
 prefix:
-#The value of %prefix%,%version% for Minecraft version
+#The value of %prefix%, %version% for Minecraft version
   - "Minecraft %version%"
 format: "%prefix%  |  %title%"
 #Variables:
