@@ -1,43 +1,45 @@
-#0 = Fetch from https://v1.hitokoto.cn
+#0 = Get Chinese quotes from https://v1.hitokoto.cn
 #1 = Pick from the list below
 #2 = Random of the two above
 mode: 2
+
+#Title list
 title:
+  - "All this time I was finding myself, and I didn't know I was lost...     —— Avicii 《Wake Me Up》"
+  - "I can't tell where the journey will end, but I know where to start     —— Avicii 《Wake Me Up》"
+  - "I tried carrying the weight of the world, but I only have two hands     —— Avicii 《Wake Me Up》"
+  - "Hope I get the chance to travel the world, but I don't have any plans     —— Avicii 《Wake Me Up》"
+  - "Life's a game made for everyone, and love is the prize     —— Avicii 《Wake Me Up》"
+  - "Strike a match and watch it burn, I'll set the world ablaze   —— Fatal Force《Wildfire》"
+  - "When all eyes are on you, you will know what to do     —— Tristam / Braken《Frame of Mind》"
+  - "Before you go and walk away, you better know where you're going     ——Vicetone《Nevada》"
+  - "If you can fly don't stop at the sky, cause there's footprints on the moon — it was you.     —— Owl City《The Yacht Club》"
   - "众生于我掌声，却未予我身份     ——《狐妖小红娘》"
-  - "你给的美梦只剩下温柔     ——《镇魂街》"
   - "一旦得到爱，一旦付出爱，就再也无法忘怀了     ——《夏目友人帐》"
-  - "他们想要的成熟我想不通，他们嘴里的软弱我听不懂     ——《镇魂街》"
-  - "所有为你而行的空幻梦想，都不及最后与你许下的愿望     ——《狐妖小红娘》"
-  - "树大必有枯枝，人多必有白痴。     ——《谢谢你！坏运》"
-  - "云深夜阑拥月色，少年携酒晚归程，酒香醉情抬眸间，白衣翩立似惊鸿。     —— 《魔道祖师》"
   - "无论是人类还是妖怪，只要内心希望他人接触，那么就是相同的存在；会因独处而感到寂寞，也会害怕踏出第一步     ——《夏目友人帐》"
-  - "Life's a game made for everyone, and love is the prize     ——Avicii 《Wake Me Up》"
-  - "我们在生命的旅程中，逐渐失去着一切，仍坚信并追逐着光明    ——Do As Infinity《深い森》"
+  - "我们在生命的旅程中，逐渐失去着一切，仍坚信并追逐着光明    —— Do As Infinity《深い森》"
   - "假如失去追寻的动力，人类将消失在永恒的黑暗中     —— Do As Infinity《深い森》"
   - "我曾难自拔于世界之大，也沉溺于其中梦话，不得真假，不做挣扎 ，不惧笑话     ———《起风了》"
   - "我们仅仅只是生存，渐渐的正在失去一切，被侮辱与谎言充斥，而我们仍旧毫无声息地站在那里   —— Do As Infinity《深い森》"
-  - "Strike a match and watch it burn, I'll set the world ablaze   —— Fatal Force《Wildfire》"
   - "理解何为孤单，努力想得到爱的你，内心的悲伤是否稍微宣泄了呢     ——《夏目友人帐》"
   - "所谓首领，只不过是被势力绑架上制高点的走狗而已。而且，都是身不由己的走狗     ——《狐妖小红娘》"
   - "这个世界上，做恶人，需要凶狠狡；做好人，需要比恶人更凶狠更狡猾     ——《万国志》"
-  - "Hope I get the chance to travel the world, but I don't have any plans     ——Avicii 《Wake Me Up》"
   - "不可结缘，徒增寂寞     ——《夏目友人帐》"
-  - "我们彷徨着，无论在哪儿，生活还将继续。再重复，即使无路可走，也要继续前进，生活还将继续   —— Do As Infinity《深い森》"
-  - "Are you there, or are you just a decoy dream in my head     ——Owl City《On the wing》"
   - "其实，雨并不公道，因为下落在一个没有公道的世界上    ——《骆驼祥子》"
   - "花早晚会凋谢，记忆最终也会消散    ——《镇魂街》 "
   - "世事变幻无常，而近乎永恒不变者，唯你我头上的同一片星空     ——《万国志》"
-  - "All this time I was finding myself, and I didn't know I was lost...     ——Avicii 《Wake Me Up》"
-  - "I can't tell where the journey will end, but I know where to start     ——Avicii 《Wake Me Up》"
-  - "If you can fly don't stop at the sky, cause there's footprints on the moon — it was you.     ——Owl City《The Yacht Club》"
-  - "I tried carrying the weight of the world, but I only have two hands     ——Avicii 《Wake Me Up》"
   - "如果温柔是罪，那就只能用拳头来洗清我们犯下的罪孽     ——《镇魂街》"
-  - "When all eyes are on you, you will know what to do     ——Tristam / Braken《Frame of Mind》"
-  - "Before you go and walk away, you better know where you're going     ——Vicetone《Nevada》"
-prefix:
+
 #The value of %prefix%, %version% for Minecraft version
+#If there are multiple items a random one will be used
+prefix:
   - "Minecraft %version%"
-format: "%prefix%  |  %title%"
+
 #Variables:
-#%prefix%,%title%,%date%
-dateformat: "yyyy年MM月dd日 HH:mm:ss"
+#%prefix% as defined above
+#%title% - random title
+#%date% - Date formatted as dateformat below
+#%mod% - loaded mod count
+format: "%prefix%  |  %title%"
+
+dateformat: "yyyy-MM-dd HH:mm:ss"

@@ -6,7 +6,7 @@ A Minecraft mod that picks random title from a list to display as window title.
 中文介绍见[MCBBS](https://www.mcbbs.net/thread-980991-1-1.html)
 
 ## Configuration
-See title.yml
+See [title.yml](https://github.com/PercyDan54/RandomTitle-Fabric/blob/master/src/main/resources/title.yml)
 
 ## Download
 Download from [Releases](https://github.com/PercyDan54/RandomTitle-Fabric/releases)
