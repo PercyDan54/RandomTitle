@@ -17,19 +17,22 @@ import java.util.Random;
 
 public class ConfigManager {
     private final Logger LOGGER = LogManager.getLogger("RandomTitle");
-    Map config;
     File configFile = new File("title.yml");
+    Map<String, Object> config;
+    Map<String, Object> defaultConfig;
 
     public ConfigManager() {
+        LOGGER.info("RandomTitle by PercyDan https://github.com/PercyDan54/RandomTitle");
+        defaultConfig = new Yaml().load(this.getClass().getResourceAsStream("/title.yml"));
         if (!configFile.exists()) {
             LOGGER.info("Config file not found, creating default");
             createDefault();
-            config = new Yaml().load(this.getClass().getResourceAsStream("/title.yml"));
         }
         try {
             config = new Yaml().load(new FileInputStream(configFile));
         } catch (Exception e) {
             LOGGER.error("Failed to load config!", e);
+            config = defaultConfig;
         }
     }
 
@@ -50,29 +53,46 @@ public class ConfigManager {
         }
     }
 
+    public Object Get(String key) {
+        Object value = config.get(key);
+        if (value == null) return defaultConfig.get(key);
+        return value;
+    }
 
-    public String getTitleFromList() {
+    private String getTitleFromList() {
         String title = "";
         try {
-            List titles = (List) config.get("title");
-            title = titles.get(new Random().nextInt(titles.size())).toString();
+            List<String> titles = (List<String>) Get("title");
+            title = titles.get(new Random().nextInt(titles.size()));
         } catch (Throwable e) {
             LOGGER.error("Failed to get title from config!", e);
         }
         return title;
     }
 
-    public String getTitleFromHitokoto() {
-        LOGGER.info("Getting title from hitokoto");
+    private String getTitleFromHitokoto() {
+        LOGGER.info("Getting title from Hitokoto API");
         String title;
         String response;
         try {
             response = EntityUtils.toString(HttpClients.createDefault().execute(new HttpGet("https://v1.hitokoto.cn/")).getEntity());
-            LOGGER.info("Response String: " + response);
+            LOGGER.info("Hitokoto Response String: " + response);
             JsonObject json = new JsonParser().parse(response).getAsJsonObject();
             String from = json.get("from").getAsString();
             String sentence = json.get("hitokoto").getAsString();
-            title = sentence + "   ——" + from;
+            String type = json.get("type").getAsString();
+            title = sentence + "   —— ";
+            switch (type) {
+                case "e":
+                    title += json.get("creator").getAsString() + " 原创";
+                    break;
+                case "f":
+                    title += "来自网络";
+                    break;
+                default:
+                    title += from;
+            }
+
         } catch (Throwable e) {
             LOGGER.error("Failed to get title from API!", e);
             return getTitleFromList();
@@ -81,7 +101,8 @@ public class ConfigManager {
     }
 
     public String getTitle() {
-        int mode = (int) config.get("mode");
+        int mode = (int) Get("mode");
+
         switch (mode) {
             case 0:
                 return getTitleFromHitokoto();
@@ -99,17 +120,8 @@ public class ConfigManager {
     }
 
     public String getPrefix() {
-        List prefixes = (List) config.get("prefix");
-        return prefixes.get((new Random()).nextInt(prefixes.size())).toString();
-    }
-
-    public String getFormat() {
-        return (String) config.get("format");
-    }
-
-    public String getDateFormat() {
-
-        return (String) config.get("dateformat");
+        List<String> prefixes = (List<String>) Get("prefix");
+        return prefixes.get((new Random()).nextInt(prefixes.size()));
     }
 
 }

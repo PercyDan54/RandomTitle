@@ -1,6 +1,7 @@
 package me.PercyDan.RandomTitle.Mixins;
 
 import me.PercyDan.RandomTitle.ConfigManager;
+import net.fabricmc.loader.FabricLoader;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
@@ -48,7 +49,7 @@ public abstract class MixinMinecraft {
 
     @Inject(method = "getWindowTitle", at = @At("HEAD"), cancellable = true)
     private void getWindowTitle(CallbackInfoReturnable<String> ci) {
-        String title = config.getFormat();
+        String title = (String) config.Get("format");
         StringBuilder stringBuilder = new StringBuilder(SharedConstants.getGameVersion().getName());
         stringBuilder.append(" ");
         ClientPlayNetworkHandler clientPlayNetworkHandler = this.getNetworkHandler();
@@ -65,10 +66,11 @@ public abstract class MixinMinecraft {
             }
 
         }
-        String date = new SimpleDateFormat(config.getDateFormat()).format((System.currentTimeMillis()));
+        String date = new SimpleDateFormat((String) config.Get("dateformat")).format((System.currentTimeMillis()));
         title = title.replace("%date%", date);
         title = title.replace("%prefix%", config.getPrefix().replace("%version%", stringBuilder.toString()));
         title = title.replace("%title%", RandTitle);
+        title = title.replace("%mod%", String.valueOf(FabricLoader.INSTANCE.getAllMods().size()));
         ci.setReturnValue(title);
         ci.cancel();
     }

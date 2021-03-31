@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "id": "randomtitle",
-  "version": "1.6",
+  "version": "1.7",
 
   "name": "RandomTitle",
-  "description": "Pick random sentences to be window title",
+  "description": "Pick random sentences as window title",
   "authors": [
     "PercyDan"
   ],
   "contact": {
     "homepage": "https://github.com/PercyDan54",
-    "sources": "https://github.com/PercyDan54/RandomTitle-Fabric"
+    "sources": "https://github.com/PercyDan54/RandomTitle"
   },
   "environment": "client",
   "mixins": [
