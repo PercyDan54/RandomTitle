@@ -39,9 +39,6 @@ public abstract class MixinMinecraft {
     private void getWindowTitle(CallbackInfoReturnable<String> ci) {
         String title = config.Get("format");
         StringBuilder stringBuilder = new StringBuilder(SharedConstants.getGameVersion().getName());
-        if (this.isModded()) {
-            stringBuilder.append("*");
-        }
         stringBuilder.append(" ");
 
         ClientPlayNetworkHandler clientPlayNetworkHandler = this.getNetworkHandler();
