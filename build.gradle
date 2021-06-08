@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.5-SNAPSHOT'
+	id 'fabric-loom' version '0.7-SNAPSHOT'
 	id 'maven-publish'
 	//id 'maven'
 	id 'idea'
@@ -20,11 +20,20 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	compile files('Mixin.jar')
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
-}
 
+	implementation group: 'org.yaml', name: 'snakeyaml', version: '1.28'
+}
+repositories {
+	maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+	maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+	maven {
+		name = 'Fabric'
+		url = 'https://maven.fabricmc.net/'
+	}
+	maven { url 'https://repo.spongepowered.org/maven' }
+}
 processResources {
 	inputs.property "version", project.version
 

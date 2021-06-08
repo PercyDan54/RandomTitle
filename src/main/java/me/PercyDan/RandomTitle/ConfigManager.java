@@ -1,4 +1,4 @@
-package me.PercyDan.RandomTitle;
+package me.percydan.randomtitle;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -53,16 +53,16 @@ public class ConfigManager {
         }
     }
 
-    public Object Get(String key) {
-        Object value = config.get(key);
-        if (value == null) return defaultConfig.get(key);
+    public <T> T Get(String key) {
+        T value = (T) config.get(key);
+        if (value == null) return (T) defaultConfig.get(key);
         return value;
     }
 
     private String getTitleFromList() {
         String title = "";
         try {
-            List<String> titles = (List<String>) Get("title");
+            List<String> titles = Get("title");
             title = titles.get(new Random().nextInt(titles.size()));
         } catch (Throwable e) {
             LOGGER.error("Failed to get title from config!", e);
@@ -101,7 +101,7 @@ public class ConfigManager {
     }
 
     public String getTitle() {
-        int mode = (int) Get("mode");
+        int mode = Get("mode");
 
         switch (mode) {
             case 0:
@@ -117,11 +117,6 @@ public class ConfigManager {
                 }
         }
         return getTitleFromList();
-    }
-
-    public String getPrefix() {
-        List<String> prefixes = (List<String>) Get("prefix");
-        return prefixes.get((new Random()).nextInt(prefixes.size()));
     }
 
 }

@@ -30,16 +30,11 @@ title:
   - "世事变幻无常，而近乎永恒不变者，唯你我头上的同一片星空     ——《万国志》"
   - "如果温柔是罪，那就只能用拳头来洗清我们犯下的罪孽     ——《镇魂街》"
 
-#The value of %prefix%, %version% for Minecraft version
-#If there are multiple items a random one will be used
-prefix:
-  - "Minecraft %version%"
-
 #Variables:
 #%prefix% as defined above
 #%title% - random title
 #%date% - Date formatted as dateformat below
 #%mod% - loaded mod count
-format: "%prefix%  |  %title%"
+format: "Minecraft %version%  |  %title%"
 
 dateformat: "yyyy-MM-dd HH:mm:ss"

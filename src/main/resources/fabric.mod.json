@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "randomtitle",
-  "version": "1.7",
+  "version": "1.8",
 
   "name": "RandomTitle",
   "description": "Pick random sentences as window title",
