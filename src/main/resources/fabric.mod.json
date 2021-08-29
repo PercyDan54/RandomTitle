@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "id": "randomtitle",
-  "version": "1.8",
+  "version": "1.0.7",
 
-  "name": "RandomTitle",
+  "name": "Random Title",
   "description": "Pick random sentences as window title",
   "authors": [
     "PercyDan"

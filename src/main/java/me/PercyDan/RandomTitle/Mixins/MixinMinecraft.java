@@ -1,6 +1,6 @@
-package me.percydan.randomtitle.Mixins;
+package me.percydan.RandomTitle.mixins;
 
-import me.percydan.randomtitle.ConfigManager;
+import me.percydan.RandomTitle.ConfigManager;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.MinecraftClient;
@@ -20,7 +20,8 @@ import java.text.SimpleDateFormat;
 @Mixin(MinecraftClient.class)
 public abstract class MixinMinecraft {
     ConfigManager config = new ConfigManager();
-    public String RandTitle = config.getTitle();
+    private final String randomTitle = config.getTitle();
+
     @Shadow
     private IntegratedServer server;
     @Shadow
@@ -57,7 +58,7 @@ public abstract class MixinMinecraft {
         }
         String date = new SimpleDateFormat(config.Get("dateformat")).format((System.currentTimeMillis()));
         title = title.replace("%date%", date);
-        title = title.replace("%title%", RandTitle);
+        title = title.replace("%title%", randomTitle);
         title = title.replace("%version%", stringBuilder.toString());
         title = title.replace("%mod%", String.valueOf(FabricLoader.getInstance().getAllMods().size()));
         ci.setReturnValue(title);

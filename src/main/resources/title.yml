@@ -31,10 +31,10 @@ title:
   - "如果温柔是罪，那就只能用拳头来洗清我们犯下的罪孽     ——《镇魂街》"
 
 #Variables:
-#%prefix% as defined above
-#%title% - random title
+#%title% - Random title
 #%date% - Date formatted as dateformat below
-#%mod% - loaded mod count
+#%mod% - Loaded mod count
+#%version% - Minecraft version
 format: "Minecraft %version%  |  %title%"
 
 dateformat: "yyyy-MM-dd HH:mm:ss"
