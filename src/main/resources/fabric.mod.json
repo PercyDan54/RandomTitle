@@ -14,7 +14,7 @@
   },
   "environment": "client",
   "mixins": [
-    "mixins.json"
+    "mixins-randomtitle.json"
   ],
 
   "depends": {

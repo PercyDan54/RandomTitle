@@ -28,9 +28,6 @@ public abstract class MixinMinecraft {
     private ServerInfo currentServerEntry;
 
     @Shadow
-    public abstract boolean isModded();
-
-    @Shadow
     public abstract ClientPlayNetworkHandler getNetworkHandler();
 
     @Shadow
